@@ -1,0 +1,55 @@
+// css 样式值
+@link-color: #428bca;
+@link-color-hover: darken(@link-color, 10%);
+
+a.link {
+  color: @link-color;
+}
+a.link:hover {
+  color: @link-color-hover;
+}
+
+// 选择器
+@my-selector: banner;
+.@{my-selector} {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}
+
+// 属性
+@property: color;
+.widget {
+  @{property}: #0ee;
+  background-@{property}: #999;
+}
+
+// URL路径别名
+@images: '../../assets/images';
+body {
+  color: #444;
+  background: url("@{images}/sun-down.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@themes: './themes';
+@import "@{themes}/dark.less";
+
+
+// 变量引用变量
+@primary:  green;
+.section {
+  @color: primary;
+  color: @@color;
+}
+
+.f(@direction:left) {
+  float: @direction
+}
+.btn {
+  .f(right);
+  color: #fff;
+  background-color: @primary;
+  border: 1px solid $color;
+}
