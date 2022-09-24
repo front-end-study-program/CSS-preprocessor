@@ -12,9 +12,16 @@
 
 .link() {
   color:aqua;
+  background-color: red;
   &:hover {
     color:skyblue;
   }
+}
+
+.link() {
+  background-color: #fff;
+  margin-right: 6px;
+  border-radius: 8px;
 }
 
 #library {
@@ -24,4 +31,34 @@
   .info() {
     color: #999;
   }
+}
+
+
+.text(@color: black; @margin: 10px; @padding: 20px) {
+  color: @color;
+  margin: @margin;
+  padding: @padding;
+}
+
+
+.box-shadow(@x: 0, @y: 0, @blur: 15px, @color: #000) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
+.box-shadow1(@color, @rest...) {
+  color: @color;
+  box-shadow: @rest;
+}
+
+
+.theme(dark, @color) {
+  color: darken(@color, 10%);
+}
+.theme(light, @color) {
+  color: lighten(@color, 10%);
+}
+.theme(@_, @color) {
+  display: block;
 }

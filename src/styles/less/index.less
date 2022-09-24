@@ -10,15 +10,20 @@ html,body {
 }
 
 
+@switch: dark;
 section {
   .flex();
   div {
     .flex();
     #size();
     .link();
+    .theme(@switch, #888);
   }
 }
 
 .info {
-  #library.info();
+  #library.info() !important;
+  color: red;
+  .text();
+  .box-shadow1(#ccc, 0, 0, 15px,#000);
 }
